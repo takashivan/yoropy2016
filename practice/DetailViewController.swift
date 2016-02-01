@@ -34,7 +34,12 @@ class DetailViewController: UIViewController {
             if error == nil {
                 let image = UIImage(data: imageData!)
                 self.imageLabel.image = image
-                self.imageLabel.contentMode = UIViewContentMode.Redraw
+              
+                let cropCGImageRef = CGImageCreateWithImageInRect(image!.CGImage, CGRectMake(0, 0, 150, 150))
+                var cropImage = UIImage(CGImage: cropCGImageRef!)
+                let view3: UIImageView = UIImageView(frame: CGRectMake(0,0,150,150))
+                view3.image = cropImage
+
             }
             
         }
