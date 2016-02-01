@@ -88,9 +88,8 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
                     let image = UIImage(data: imageData!)
-                    let croppedImg = CGImageCreateWithImageInRect(image?.CGImage, CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
-                    let crop = UIImage(CGImage: croppedImg!)
-                    cell!.eventImageView.image = crop
+                    
+                    cell!.eventImageView.image = image
                 }
         }
         cell!.eventName.text = event.valueForKey("title") as? String
