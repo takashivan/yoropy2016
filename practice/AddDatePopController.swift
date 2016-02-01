@@ -9,13 +9,28 @@
 import UIKit
 
 
+func format(date : NSDate, style : String) -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+    dateFormatter.dateFormat = style
+    return  dateFormatter.stringFromDate(date)
+}
 
 var dateList = [String]()
 
 class AddDatePopViewController: UIViewController, UITextFieldDelegate {
     
-    let dateField = UITextField()
     
+    let label1 = UILabel()
+   
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    @IBAction func changeDate(sender: UIDatePicker) {
+        label1.text = format(datePicker.date, style: "yyyy年MM月dd日　HH時mm分")
+
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,24 +48,17 @@ class AddDatePopViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(label)
         
         
-        dateField.backgroundColor = UIColor.whiteColor()
-        dateField.layer.borderColor = UIColor.flatBlueColor().CGColor
-        dateField.placeholder = "  DATE"
-        dateField.frame = CGRectMake(15, label.frame.height+10 , self.view.frame.width-50, 50)
-        dateField.layer.borderWidth = 1
-        dateField.layer.cornerRadius = 10
-        dateField.textAlignment = .Left
-        dateField.font = UIFont(name: "Arcon", size: 24)
-        self.view.addSubview(dateField)
+        
+        datePicker.backgroundColor = UIColor.flatWatermelonColor()
         
         
-        
+
         // create the detail label
         
         
         
         
-        dateField.delegate = self
+       
         
         // Do any additional setup after loading the view.
     }
@@ -62,9 +70,7 @@ class AddDatePopViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func save(sender: UIButton) {
         
-        
-        dateList.append(dateField.text!)
-        dateField.text = ""
+        dateList.append(label1.text!)
         NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "date")
     
         
@@ -79,8 +85,7 @@ class AddDatePopViewController: UIViewController, UITextFieldDelegate {
     
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        dateField.resignFirstResponder()
-       
+              
         return true
     }
     
