@@ -88,6 +88,7 @@ class HomeViewController: UIViewController, UIViewControllerTransitioningDelegat
                 (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
                     let image = UIImage(data: imageData!)
+                    let croppedImg = CGImageCreateWithImageInRect(image?.CGImage, CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
                     cell!.eventImageView.image = image
                 }
         }

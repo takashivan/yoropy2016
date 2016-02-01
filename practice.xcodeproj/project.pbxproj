@@ -10,6 +10,7 @@
 		19C919349F642F34E2883A8C /* Pods_practiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B9B6571AC1383E1F1D55C /* Pods_practiceTests.framework */; };
 		A142898040DBC0E18D279A1A /* Pods_practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C35765AEB59645BEEEAF63 /* Pods_practice.framework */; };
 		E4D75F8603DA7FC1AE383A45 /* Pods_practiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1565B5A006ABA23FA6299EDD /* Pods_practiceUITests.framework */; };
+		FD0BD98E1C5EF80F00C888D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD0BD98D1C5EF80F00C888D4 /* Info.plist */; };
 		FD0D914F1C5757E200AD2491 /* ALCameraShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D91361C5757E200AD2491 /* ALCameraShot.swift */; };
 		FD0D91501C5757E200AD2491 /* ALCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D91371C5757E200AD2491 /* ALCameraView.swift */; };
 		FD0D91511C5757E200AD2491 /* ALCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D91381C5757E200AD2491 /* ALCameraViewController.swift */; };
@@ -102,6 +103,7 @@
 		BED0A111E1C471B74111E240 /* Pods-practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-practice/Pods-practice.debug.xcconfig"; sourceTree = "<group>"; };
 		E22342F4D482B200A9A3A17B /* Pods-practiceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-practiceTests/Pods-practiceTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3905EE55D7DFB7597583AF6 /* Pods-practiceUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-practiceUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-practiceUITests/Pods-practiceUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD0BD98D1C5EF80F00C888D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD0D91361C5757E200AD2491 /* ALCameraShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALCameraShot.swift; path = ALCameraViewController/Utilities/ALCameraShot.swift; sourceTree = "<group>"; };
 		FD0D91371C5757E200AD2491 /* ALCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALCameraView.swift; path = ALCameraViewController/Views/ALCameraView.swift; sourceTree = "<group>"; };
 		FD0D91381C5757E200AD2491 /* ALCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALCameraViewController.swift; path = ALCameraViewController/ViewController/ALCameraViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				FD0D91401C5757E200AD2491 /* ALImagePickerViewDelegate.swift */,
 				FD0D91411C5757E200AD2491 /* ALPermissionsView.swift */,
 				FD0D91421C5757E200AD2491 /* ALUtilities.swift */,
+				FD0BD98D1C5EF80F00C888D4 /* Info.plist */,
 				FD0D91461C5757E200AD2491 /* Resources */,
 				FD0D914D1C5757E200AD2491 /* Support Files */,
 			);
@@ -505,6 +508,7 @@
 				FD70228E1C50BDCA002DC255 /* Amable.ttf in Resources */,
 				FD0D915F1C5757E200AD2491 /* ALCameraViewController.xcconfig in Resources */,
 				FDD1D60A1C5B08F200C03894 /* PlaceCell.xib in Resources */,
+				FD0BD98E1C5EF80F00C888D4 /* Info.plist in Resources */,
 				FD0D915D1C5757E200AD2491 /* ALCameraViewAssets.xcassets in Resources */,
 				FD70224B1C50B883002DC255 /* Main.storyboard in Resources */,
 				FD70228C1C50BB9F002DC255 /* FONTS in Resources */,
