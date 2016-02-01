@@ -14,7 +14,7 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
     
    
     
-    @IBOutlet weak var titleField: UITextField!
+ //   @IBOutlet weak var titleField: UITextField!
    
     @IBOutlet weak var imageView: UIImageView!
 
@@ -46,7 +46,7 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
     
     override func viewDidLoad() {
         
-        titleField.delegate = self
+//        titleField.delegate = self
     
         
         self.view.bringSubviewToFront(imageView)
@@ -151,9 +151,11 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
             break
         }
     }
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        titleField.resignFirstResponder()
-        return true }
+    
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool {
+//        titleField.resignFirstResponder()
+//        return true }
 
     @IBAction func addButton(sender: UIButton) {
         
@@ -161,15 +163,14 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
         let imageData :NSData = UIImagePNGRepresentation(self.saveEventPhoto!)!
         self.uploadEventPhoto = PFFile(name: "event.png", data: imageData)!
         
-        self.saveEventTitle = self.titleField.text
+//        self.saveEventTitle = self.titleField.text
         
         let savingObjects = PFObject(className: "Event")
         
-        savingObjects["title"] = self.saveEventTitle
+       // savingObjects["title"] = self.saveEventTitle
         savingObjects["photo"] = self.uploadEventPhoto
         savingObjects["user"] = PFUser.currentUser()!.username
-        savingObjects["date"] = self.saveEventDate
-        savingObjects["place"] = self.saveEventPlace
+     //   savingObjects["date"] = self.saveEventDate
         
         savingObjects.saveInBackgroundWithBlock{ (success: Bool, error: NSError?) -> Void in
             
