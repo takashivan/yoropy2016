@@ -1,5 +1,5 @@
 //
-//  AddPlaceViewController.swift
+//  SelectTimeViewController.swift
 //  practice
 //
 //  Created by 株式会社ConU on 2016/01/22.
@@ -8,34 +8,34 @@
 
 import UIKit
 
-class AddPlaceViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDelegate {
+class AddDateViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDelegate {
     
     
     
     
-    @IBOutlet weak var placeTableView: UITableView!
+    @IBOutlet weak var dateTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
-        self.placeTableView.reloadData()
+        self.dateTableView.reloadData()
         
-        let nib:UINib = UINib(nibName: "PlaceCell", bundle: nil)
-        self.placeTableView.registerNib(nib, forCellReuseIdentifier: "PlaceCell")
+        let nib:UINib = UINib(nibName: "DateCell", bundle: nil)
+        self.dateTableView.registerNib(nib, forCellReuseIdentifier: "DateCell")
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("title") != nil {
-            titleList =
-                NSUserDefaults.standardUserDefaults().objectForKey("title") as! [String]
+        if NSUserDefaults.standardUserDefaults().objectForKey("date") != nil {
+            dateList =
+                NSUserDefaults.standardUserDefaults().objectForKey("date") as! [String]
         }
         
         
     }
     
     
-
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleList.count
-
+        return dateList.count
+        
     }
     
     
@@ -43,22 +43,22 @@ class AddPlaceViewController: UIViewController, UIPopoverPresentationControllerD
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlaceCell") as? PlaceCell
-        cell!.titleLabel.text = titleList[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("DateCell") as? DateCell
+        cell!.dateLabel.text = dateList[indexPath.row]
         return cell!
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == UITableViewCellEditingStyle.Delete{
-            titleList.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(titleList, forKey: "title")
-            placeTableView.reloadData()
+            dateList.removeAtIndex(indexPath.row)
+            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "date")
+            dateTableView.reloadData()
         }
     }
     
     
     override func viewDidAppear(animated: Bool) {
-        self.placeTableView.reloadData()
+        self.dateTableView.reloadData()
     }
     
     
@@ -68,11 +68,11 @@ class AddPlaceViewController: UIViewController, UIPopoverPresentationControllerD
     }
     
     
-
+    
     
     @IBAction func popover(sender: AnyObject) {
         self.performSegueWithIdentifier("showView", sender: self)
-       
+        
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -93,20 +93,15 @@ class AddPlaceViewController: UIViewController, UIPopoverPresentationControllerD
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) ->UIModalPresentationStyle {
         return .None
     }
+    
+    
+    
+    
+    
+}
 
-    
-   
-  
-        
-    }
-    
-    
-    
 
-    
 
-    
-    
-    
+
 
 

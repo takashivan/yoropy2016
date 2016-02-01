@@ -88,8 +88,12 @@ class AddPlacePopViewController: UIViewController, UITextFieldDelegate {
         detailList.append(detailField.text!)
         detailField.text = ""
         NSUserDefaults.standardUserDefaults().setObject(detailList, forKey: "detail")
-    
-    
+        
+        
+        let parentVC = presentingViewController as! AddPlaceViewController
+        parentVC.placeTableView.reloadData()
+        
+        
         
     }
     
@@ -102,7 +106,7 @@ class AddPlacePopViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func openGuruNavi(sender: UIButton) {
         let svc = SFSafariViewController(URL: NSURL(string: self.urlGurunavi)!)
-        self.presentViewController(svc, animated: true, completion: nil)
+        
     }
     
     
