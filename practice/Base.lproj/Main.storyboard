@@ -780,7 +780,7 @@
                                     <action selector="save:" destination="8bx-Ih-mcm" eventType="touchUpInside" id="edu-mV-PNU"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-3k-xVd">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="mg5-3k-xVd">
                                 <rect key="frame" x="0.0" y="20" width="600" height="520"/>
                                 <date key="date" timeIntervalSinceReferenceDate="475999987.311867">
                                     <!--2016-02-01 06:13:07 +0000-->
