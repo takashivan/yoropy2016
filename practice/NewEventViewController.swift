@@ -17,10 +17,9 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
     @IBOutlet weak var titleField: UITextField!
    
     @IBOutlet weak var imageView: UIImageView!
+
     
-    @IBOutlet weak var placeField: UITextField!
-    
-    @IBOutlet weak var timeField: UITextField!
+
     
     //追加のメンバ変数
     var eventTitle :String = ""
@@ -48,8 +47,7 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
     override func viewDidLoad() {
         
         titleField.delegate = self
-        placeField.delegate = self
-        timeField.delegate = self
+    
         
         self.view.bringSubviewToFront(imageView)
         
@@ -155,8 +153,6 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         titleField.resignFirstResponder()
-        timeField.resignFirstResponder()
-        placeField.resignFirstResponder()
         return true }
 
     @IBAction func addButton(sender: UIButton) {
@@ -166,8 +162,6 @@ class NewEventViewController: UIViewController, LiquidFloatingActionButtonDataSo
         self.uploadEventPhoto = PFFile(name: "event.png", data: imageData)!
         
         self.saveEventTitle = self.titleField.text
-        self.saveEventPlace = self.placeField.text
-        self.saveEventDate = self.timeField.text
         
         let savingObjects = PFObject(className: "Event")
         
